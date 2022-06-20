@@ -1,4 +1,4 @@
-package level01;
+package leeseolhui.level01;
 
 import java.util.Scanner;
 
@@ -11,6 +11,5 @@ public class code01 {
         b = sc.nextInt();
 
         System.out.println(a + b);
-
     }
 }
