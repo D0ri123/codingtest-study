@@ -19,10 +19,15 @@ public class example_03_03 {
         }
 
         int[] arr2 = new int[m];
-        for(int k=0; k<m; k++){
-            arr2[k] = arr[n-1][k];
+        int[] num = new int[m];
+        for(int l=0; l<n; l++){
+            for(int k=0; k<m; k++){
+                arr2[k] = arr[l][k];
+            }
+            Arrays.sort(arr2);
+            num[l] = arr2[0];
         }
-        Arrays.sort(arr2);
-        System.out.println(arr2[0]);
+        Arrays.sort(num);
+        System.out.println(num[m-1]);
     }
 }
