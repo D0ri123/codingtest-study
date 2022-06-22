@@ -1,4 +1,4 @@
-package leeseolhui.level02;
+package leeseolhui.baekjoon.level02;
 
 import java.util.Scanner;
 
