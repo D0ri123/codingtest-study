@@ -1,6 +1,6 @@
 package leeseolhui.greedy;
 
-public class example_03_1 {
+public class example_03_01 {
     public static void main(String[] args){
         int change = 1260;
 
