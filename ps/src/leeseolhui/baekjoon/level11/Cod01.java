@@ -17,5 +17,6 @@ public class Cod01 {
         for(int j=0; j<arr.length; j++){
             System.out.println(arr[j]);
         }
+        sc.close();
     }
 }
