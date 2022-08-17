@@ -29,7 +29,6 @@ public class Code09 {
             dfs_special(x, y + 1, color);
             return true;
         }
-        if(graph_s[x][y].equals("G")) graph_s[x][y] = "R";
         return false;
     }
 
