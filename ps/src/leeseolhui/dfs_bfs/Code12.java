@@ -17,8 +17,8 @@ class Tomato {
 public class Code12 {
     public static int m, n;
     public static int[][] graph = new int[1001][1001];
-    public static int dx[] = {0, 0, -1, 1}; //상,하
-    public static int dy[] = {-1, 1, 0, 0};//좌,우
+    public static int dx[] = {0, 0, -1, 1};
+    public static int dy[] = {-1, 1, 0, 0};
     public static Queue<Tomato> q = new LinkedList<>();
 
     public static int bfs() {
@@ -63,7 +63,7 @@ public class Code12 {
             for (int j = 0; j < m; j++) {
                 graph[i][j] = sc.nextInt();
             }
-        } //좌표에 하나씩 입력해주기
+        }
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
