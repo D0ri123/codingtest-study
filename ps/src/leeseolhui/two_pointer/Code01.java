@@ -26,11 +26,11 @@ public class Code01 {
         }
 
         int cnt = 0;
-        for(int i=0; i<list.length; i++){ // i는 8까지
+        for(int i=0; i<list.length; i++){
             int target_sum = 0;
             int start = i;
             target_sum += list[start];
-            for(int j=i; j<list.length; j++){ // j는 9까지
+            for(int j=i; j<list.length; j++){
                 int end = j;
                 if(i==j){
                     if(target_sum == m){
