@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Code04 {
     public static ArrayList<Integer> answer(int n, int m, int[] arr1, int[] arr2){
-        ArrayList<Integer> ans = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
 
         Arrays.sort(arr1); // two-pointers 알고리즘은 반드시 오름차순을 시켜줘야한다. {1,2,3,5,9}
         Arrays.sort(arr2); // {2,3,5,7,8}
@@ -20,9 +20,9 @@ public class Code04 {
         while(p1<n && p2<m){
             if(arr1[p1] < arr2[p2]) p1++;
             else if(arr1[p1] > arr2[p2]) p2++;
-            else ans.add(arr1[p1++]);
+            else result.add(arr1[p1++]);
         }
-        return ans;
+        return result;
     }
 
     public static void main(String[] args) {
