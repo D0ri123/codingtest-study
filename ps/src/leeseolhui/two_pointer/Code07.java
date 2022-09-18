@@ -1,4 +1,7 @@
 package leeseolhui.two_pointer;
+/**
+ * 연속된 자연수의 합 - ArrayList.remove(Object o) 사용
+ */
 
 import java.util.ArrayList;
 import java.util.Scanner;
