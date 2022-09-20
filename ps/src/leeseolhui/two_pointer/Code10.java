@@ -59,6 +59,6 @@ public class Code10 {
        }
 
         System.out.println(sb);
-        br.close();
+        br.close(); //br.close도 꼭 명시해주기. runtime에 영향을 끼친다.
     }
 }
