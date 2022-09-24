@@ -11,25 +11,24 @@ import java.util.StringTokenizer;
 
 public class Code09 {
     public static int[] solution(int s, int[] work) {
-        int[] cache = new int[s];
-        for(int x : work){
-            int pos = -1;
-            for(int i=0; i<s; i++) {
-                if(x==cache[i]) pos=i;
-            }
-            if(pos==-1){
-                for(int i=s-1; i>=1; i--){
-                    cache[i] = cache[i-1];
-                }
-                cache[0]=x;
-            } else{
-                for(int i=pos; i>=1; i--){
-                    cache[i] = cache[i-1];
-                }
-                cache[0]=x;
-            }
-        }
-        return cache;
+       int[] cache = new int[s];
+       for(int x:work){
+           int pos = -1;
+           for(int i=1; i<s; i++){
+               if(cache[i]==x) pos=i;
+           }
+           if(pos==-1){
+               for(int i=s-1;i>=1;i--){
+                   cache[i]=cache[i-1];
+               }
+           } else{
+               for(int i=pos;i>=1;i--){
+                   cache[i]=cache[i-1];
+               }
+           }
+           cache[0]=x;
+       }
+       return cache;
     }
 
     public static void main(String[] args) throws IOException {
