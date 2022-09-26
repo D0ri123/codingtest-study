@@ -36,6 +36,7 @@ public class Code15{
         box = new int[h][n][m];
         ch = new int[h][n][m];
 
+
         // 입력 받기 - 박스의 아래부터 저장해야 하므로 n-1부터 시작
         for(int k = h-1; k >= 0; k--) {
             for (int i = n - 1; i >= 0; i--) {

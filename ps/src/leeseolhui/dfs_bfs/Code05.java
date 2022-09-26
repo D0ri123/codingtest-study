@@ -6,7 +6,7 @@ public class Code05 {
     public static int m,n,k;
     static int[][] graph;
 
-    public static boolean dfs(int x, int y){ //주변에 1이 있는지 탐색
+    public static boolean dfs(int x, int y){
         if(x<=-1 || x>=n || y<=-1 || y>=m) {
             return false;
         }
@@ -21,7 +21,7 @@ public class Code05 {
         return false;
     }
 
-    public static void main(String[] args) throws ArrayIndexOutOfBoundsException{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
 
