@@ -4,7 +4,6 @@ package leeseolhui.programmers;
 //1. 만들 수 있는 숫자 조합 생성
 //2. 소수인지 판별하는 기능 생성
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -25,9 +24,9 @@ public class Problem3 {
     }
 
     public static void permutation(String origin, String others){
-        if(!origin.equals(""))
+        if(!origin.equals("")) {
             numberSet.add(Integer.parseInt(origin));
-
+        }
         for(int i=0; i<others.length(); i++){
             permutation(origin+others.charAt(i), others.substring(0,i)+others.substring(i+1));
         }
