@@ -10,18 +10,11 @@ public class Code02 {
     }
 
     public static void solution(String str){
-       Set<String> set = new HashSet<>();
-       int initSize = 0;
-       StringBuilder sb = new StringBuilder();
-
-       for(String s:str.split("")){
-           set.add(s);
-           if(set.size() != initSize) {
-               initSize = set.size();
-               sb.append(s);
-           }
+       String answer = "";
+       for(int i=0; i<str.length(); i++){
+           if(str.indexOf(str.charAt(i))==i)
+               answer += str.charAt(i);
        }
-
-        System.out.println(sb);
+        System.out.println(answer);
     }
 }
