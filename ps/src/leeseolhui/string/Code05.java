@@ -12,9 +12,10 @@ public class Code05 {
     }
 
     public static int solution(String word){
-        String match = "[a-zA-Z]";
-        String stringResult = word.replaceAll(match, "");
-        int result = Integer.parseInt(stringResult);
-        return result;
+        int answer = 0;
+        for (char ch : word.toCharArray()){
+            if(ch >= 48 && ch <= 57) answer = answer * 10 + (ch-48);
+        }
+        return answer;
     }
 }
