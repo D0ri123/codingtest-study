@@ -12,12 +12,10 @@ public class Code03 {
     }
 
     public static String solution(String word){
-        int length = word.length();
-        String lowerCaseWord = word.toLowerCase();
-        for(int index=0; index<length/2; index++){
-            if(lowerCaseWord.charAt(index) != lowerCaseWord.charAt((length-1)-index))
-                return "NO";
-        }
-        return "YES";
+        String sb = new StringBuilder(word).reverse().toString();
+
+        if(sb.equalsIgnoreCase(word))
+            return "YES";
+        return "NO";
     }
 }
