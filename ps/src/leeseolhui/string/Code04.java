@@ -8,26 +8,15 @@ public class Code04 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String word = sc.nextLine();
-        solution(word);
+        System.out.println(solution(word));
     }
 
-    public static void solution(String word){
-        String match = "[^a-zA-Z]";
-        word = word.replaceAll(match, "");
+    public static String solution(String word){
+        String match = "[^A-Z]";
+        word = word.toUpperCase().replaceAll(match, "");
+        String tmp = new StringBuilder(word).reverse().toString().toUpperCase();
 
-        System.out.println(checker(word));
-    }
-
-    public static String checker(String word){
-        int len = word.length();
-        int count = 0;
-        for(int i=0; i< len/2; i++){
-            String wordLowerCase = word.toLowerCase();
-            if(wordLowerCase.charAt(i) == wordLowerCase.charAt(len-1-i))
-                count++;
-        }
-
-        if(count == len/2)
+        if(word.equals(tmp))
             return "YES";
         return "NO";
     }
