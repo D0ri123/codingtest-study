@@ -12,10 +12,11 @@ public class Code05 {
     }
 
     public static int solution(String word){
-        int answer = 0;
+        String answer = "";
         for (char ch : word.toCharArray()){
-            if(ch >= 48 && ch <= 57) answer = answer * 10 + (ch-48);
+            if(Character.isDigit(ch))
+                answer+=ch;
         }
-        return answer;
+        return Integer.parseInt(answer);
     }
 }
