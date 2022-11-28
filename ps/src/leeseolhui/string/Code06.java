@@ -2,7 +2,6 @@ package leeseolhui.string;
 
 // 가장 짧은 문자거리
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Code06 {
@@ -13,33 +12,38 @@ public class Code06 {
     }
 
     public static void solution(String word){
-        StringBuilder sb = new StringBuilder();
-        ArrayList<Integer> list = new ArrayList<>();
         String[] words = word.split(" ");
         String text = words[0];
         String character = words[1];
 
-        list = collectTargetIdx(list, text, character);
+        int[] answer = new int[text.length()];
 
+        int pointer = 1000;
         for(int i=0; i<text.length(); i++){
-            int min = Integer.MAX_VALUE;
-            if(!String.valueOf(text.charAt(i)).equals(character)) {
-                for (int num : list) {
-                    min = Math.min(Math.abs(i - num), min);
-                }
-                sb.append(min).append(" ");
+            if(String.valueOf(text.charAt(i)).equals(character)) {
+                pointer = 0;
+                answer[i] = 0;
             }
-            else
-                sb.append(0).append(" ");
+            else{
+                pointer++;
+                answer[i] = pointer;
+            }
+        }
+
+        pointer = 1000;
+        for(int i=text.length()-1; i>=0; i--){
+            if(String.valueOf(text.charAt(i)).equals(character))
+                pointer = 0;
+            else{
+                pointer++;
+                answer[i] = Math.min(answer[i], pointer);
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for(int a : answer){
+            sb.append(a).append(" ");
         }
         System.out.println(sb);
-    }
-
-    public static ArrayList<Integer> collectTargetIdx(ArrayList<Integer> list, String text, String target){
-        for(int i=0; i<text.length(); i++){
-            if(String.valueOf(text.charAt(i)).equals(target))
-                list.add(i);
-        }
-        return list;
     }
 }
