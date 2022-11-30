@@ -14,21 +14,17 @@ public class Code07 {
     public static String solution(String word){
         StringBuilder sb = new StringBuilder();
 
+        word += " ";
         int count = 1;
-        int i=1;
-        while(word.length()>0){
-            char alphabet = word.charAt(0);
-            if(alphabet == word.charAt(i)) {
-                i++;
+        for(int i=0; i<word.length()-1; i++){
+            if(word.charAt(i)==word.charAt(i+1))
                 count++;
-            }
             else{
-                sb.append(alphabet).append(count);
-                word = word.substring(i);
+                sb.append(word.charAt(i));
+                if(count>1) sb.append(count);
                 count = 1;
             }
         }
-
         return sb.toString();
     }
 }
