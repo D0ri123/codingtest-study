@@ -8,43 +8,34 @@ public class Code03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        sc.nextLine();
-        String eventOfA = sc.nextLine();
-        String eventOfB = sc.nextLine();
 
-        String[] A = eventOfA.split(" ");
-        String[] B = eventOfB.split(" ");
+        int[] a = new int[n];
+        int[] b = new int[n];
 
-        solution(n, A, B);
+        for(int i=0; i<n; i++){
+            a[i] = sc.nextInt();
+        }
+        for(int i=0; i<n; i++){
+            b[i] = sc.nextInt();
+        }
+
+        solution(n, a, b);
     }
 
-    public static void solution(int n, String[] player1, String[] player2){
+    public static void solution(int n, int[] player1, int[] player2){
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<n; i++){
-            int eventCaseA = Integer.parseInt(player1[i]);
-            int eventCaseB = Integer.parseInt(player2[i]);
-            if(inspector(eventCaseA, eventCaseB) == eventCaseA)
-                sb.append("A").append("\n");
-            else if(inspector(eventCaseA, eventCaseB) == eventCaseB)
-                sb.append("B").append("\n");
-            else
+            if(player1[i]==player2[i])
                 sb.append("D").append("\n");
+            else if(player1[i]==1 && player2[i]==3)
+                sb.append("A").append("\n");
+            else if(player1[i]==2 && player2[i]==1)
+                sb.append("A").append("\n");
+            else if(player1[i]==3 && player2[i]==2)
+                sb.append("A").append("\n");
+            else
+                sb.append("B").append("\n");
         }
         System.out.println(sb);
-    }
-
-    public static int inspector(int event1, int event2){
-        if(Math.abs(event1-event2)==2)
-            if(event1==1)
-                return event1;
-            else
-                return event2;
-
-        if(event1>event2)
-            return event1;
-        else if(event1<event2)
-            return event2;
-        else
-            return 0;
     }
 }
