@@ -2,7 +2,6 @@ package leeseolhui.array;
 
 //격자판 최대합
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Code09 {
@@ -16,27 +15,21 @@ public class Code09 {
                 table[i][j] = sc.nextInt();
             }
         }
-        int result = searchMax(rowSum(table), columnSum(table), diagonalSum(table));
-        System.out.println(result);
+
+        int max = Math.max(columnAndRowSum(table), diagonalSum(table));
+        System.out.println(max);
     }
 
-    public static int rowSum(int[][] table){ //행 합
-        int max = Integer.MIN_VALUE;
-        for(int i=0; i< table.length; i++){
-            int num = Arrays.stream(table[i]).sum();
-            max = Math.max(max, num);
-        }
-        return max;
-    }
-
-    public static int columnSum(int[][] table){ //열 합
+    public static int columnAndRowSum(int[][] table){ //열 합
         int max = Integer.MIN_VALUE;
         for(int i=0; i<table.length; i++){
-            int sum = 0;
+            int sum1 = 0, sum2 = 0;
             for(int j=0; j< table.length; j++){
-                sum += table[j][i];
+                sum1 += table[i][j];
+                sum2 += table[j][i];
             }
-            max = Math.max(max, sum);
+            max = Math.max(max, sum1);
+            max = Math.max(max, sum2);
         }
         return max;
     }
@@ -49,11 +42,5 @@ public class Code09 {
             sum2 += table[i][table.length-1-i];
         }
         return Math.max(sum1, sum2);
-    }
-
-    public static int searchMax(int a, int b, int c){
-        int max = Math.max(a, b);
-        max = Math.max(max, c);
-        return max;
     }
 }
