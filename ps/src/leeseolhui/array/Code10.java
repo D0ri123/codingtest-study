@@ -29,8 +29,10 @@ public class Code10 {
                 for(int k=0; k<4; k++){
                     int nx = i + dx[k];
                     int ny = j + dy[k];
-                    if(nx<0 || nx>=n || ny<0 || ny>=n) continue;
-                    if(field[nx][ny] >= field[i][j]) flag = false;
+                    if(nx>=0 && nx<n && ny>=0 && ny<n && field[nx][ny] >= field[i][j]) {
+                        flag = false;
+                        break;
+                    }
                 }
                 if(flag) answer++;
             }
