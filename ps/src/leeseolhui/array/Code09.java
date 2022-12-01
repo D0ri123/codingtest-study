@@ -16,11 +16,8 @@ public class Code09 {
                 table[i][j] = sc.nextInt();
             }
         }
-
-        int max = Math.max(rowSum(table), columnSum(table));
-        max = Math.max(max, diagonalSum(table));
-
-        System.out.println(max);
+        int result = searchMax(rowSum(table), columnSum(table), diagonalSum(table));
+        System.out.println(result);
     }
 
     public static int rowSum(int[][] table){ //행 합
@@ -52,5 +49,11 @@ public class Code09 {
             sum2 += table[i][table.length-1-i];
         }
         return Math.max(sum1, sum2);
+    }
+
+    public static int searchMax(int a, int b, int c){
+        int max = Math.max(a, b);
+        max = Math.max(max, c);
+        return max;
     }
 }
