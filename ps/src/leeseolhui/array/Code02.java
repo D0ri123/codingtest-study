@@ -22,7 +22,7 @@ public class Code02 {
         for(int i=1; i<arr.length; i++){
             if(arr[i]>max) {
                 count++;
-                max = Math.max(max, arr[i]);
+                max = arr[i];
             }
         }
         return count;
