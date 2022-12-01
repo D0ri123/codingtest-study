@@ -7,19 +7,20 @@ import java.util.Scanner;
 public class Code05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int count = 1;
         int n = sc.nextInt();
-        for(int i=3; i<=n; i++){
-            if(solution(i)) count++;
-        }
-        System.out.println(count);
+        System.out.println(solution(n));
     }
 
-    public static boolean solution(int n){
-        for(int i=2; i<=Math.sqrt(n); i++){
-            if((n%i)==0)
-                return false;
+    public static int solution(int n){
+        int count = 0;
+        int[] ch = new int[n+1];
+        for(int i=2; i<=n; i++){
+            if(ch[i]==0) {
+                count++;
+                for(int j=i; j<=n; j=j+i)
+                    ch[j] = 1;
+            }
         }
-        return true;
+        return count;
     }
 }
