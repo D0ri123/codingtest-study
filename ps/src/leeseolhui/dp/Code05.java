@@ -21,7 +21,6 @@ public class Code05 {
 
     public static int solution(int[] coin, int price){
         int[] cache = new int[price+1];
-        Arrays.fill(cache,0);
 
         for(int i=0; i< cache.length; i++){
             cache[i] = i/coin[0];
