@@ -21,12 +21,10 @@ public class Code05 {
 
     public static int solution(int[] coin, int price){
         int[] cache = new int[price+1];
+        Arrays.fill(cache, Integer.MAX_VALUE);
+        cache[0] = 0;
 
-        for(int i=0; i< cache.length; i++){
-            cache[i] = i/coin[0];
-        }
-
-        for(int i=1; i<coin.length; i++){
+        for(int i=0; i<coin.length; i++){
             for(int j=coin[i]; j<cache.length; j++){
                 int each = cache[j-coin[i]] + 1;
                 cache[j] = Math.min(cache[j], each);
