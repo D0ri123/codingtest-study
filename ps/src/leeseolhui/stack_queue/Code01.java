@@ -1,6 +1,5 @@
 package leeseolhui.stack_queue;
 
-import java.util.EmptyStackException;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -14,15 +13,12 @@ public class Code01 {
     }
 
     public static String solution(String input, Stack<Character> s){
-        for(int i=0; i<input.length(); i++){
-            if(input.charAt(i)=='(')
-                s.push(input.charAt(i));
+        for(char x : input.toCharArray()){
+            if(x=='(')
+                s.push(x);
             else
-                try{
-                    s.pop();
-                }catch(EmptyStackException e){
-                    return "NO";
-                }
+                if(s.isEmpty()) return "NO";
+                s.pop();
         }
         return s.isEmpty() ? "YES": "NO";
     }
