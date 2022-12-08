@@ -16,13 +16,13 @@ public class Code02 {
         Stack<Character> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
         for(char x : input.toCharArray()){
-            if(x=='(')
-                stack.push(x);
             if(x==')') {
-                stack.pop();
-            }
-            if(stack.isEmpty() && Character.isAlphabetic(x))
-                sb.append(x);
+                while(stack.pop()!='(');
+            } else
+                stack.push(x);
+        }
+        for(Character ch : stack){
+            sb.append(ch);
         }
         System.out.println(sb);
     }
