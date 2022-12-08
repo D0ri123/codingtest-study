@@ -30,23 +30,16 @@ public class Code03 {
         Stack<Integer> basket = new Stack<>();
         int count = 0;
 
-        for(int i=0; i<moves.length; i++){
+        for(int pos : moves){
             for(int j=0; j<board.length; j++){
-                int doll = board[j][moves[i]-1];
-                if(doll!=0 && !basket.isEmpty() && doll==basket.peek()){
-                    board[j][moves[i]-1] = 0;
-                    basket.pop();
-                    count += 2;
-                    break;
-                }
-                if(doll!=0 && basket.isEmpty()) {
-                    basket.push(doll);
-                    board[j][moves[i]-1] = 0;
-                    break;
-                }
-                if(doll!=0 && doll != basket.peek()){
-                    basket.push(doll);
-                    board[j][moves[i]-1] = 0;
+                if(board[j][pos-1]!=0){
+                    int doll = board[j][pos-1];
+                    board[j][pos-1]=0;
+                    if(!basket.isEmpty() && doll==basket.peek()){
+                        count += 2;
+                        basket.pop();
+                    }
+                    else basket.push(doll);
                     break;
                 }
             }
