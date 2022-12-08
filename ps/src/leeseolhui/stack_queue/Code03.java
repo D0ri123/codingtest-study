@@ -2,29 +2,19 @@ package leeseolhui.stack_queue;
 
 //크레인 인형뽑기(카카오)
 
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class Code03 {
     public static void main(String[] args){
-        ArrayList<Stack<Integer>> boards = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
         int[][] board = new int[n][n];
 
-        for(int i=n-1; i>=0; i--){
+        for(int i=0; i<n; i++){
             for(int j=0; j<n; j++) {
                 board[i][j] = sc.nextInt();
-            }
-        }
-
-        for(int i=0; i<n; i++){
-            boards.add(new Stack<>());
-            for(int j=0; j<n; j++){
-                if(board[j][i]==0) continue;
-                boards.get(i).push(board[j][i]);
             }
         }
 
@@ -33,23 +23,34 @@ public class Code03 {
         for(int i=0; i<m; i++){
             moves[i] = sc.nextInt();
         }
-        System.out.println(solution(boards, moves));
+        System.out.println(solution(board, moves));
     }
 
-    public static int solution(ArrayList<Stack<Integer>> boards, int[] moves){
+    public static int solution(int[][] board, int[] moves){
         Stack<Integer> basket = new Stack<>();
-        basket.push(boards.get(moves[0]-1).pop());
+        int count = 0;
 
-        for(int i=1; i<moves.length; i++){
-            int doll = boards.get(moves[i] - 1).pop();
-            if (!basket.isEmpty()) {
-                int a = basket.pop();
-                if (a != doll) {
-                    basket.push(a);
+        for(int i=0; i<moves.length; i++){
+            for(int j=0; j<board.length; j++){
+                int doll = board[j][moves[i]-1];
+                if(doll!=0 && !basket.isEmpty() && doll==basket.peek()){
+                    board[j][moves[i]-1] = 0;
+                    basket.pop();
+                    count += 2;
+                    break;
+                }
+                if(doll!=0 && basket.isEmpty()) {
                     basket.push(doll);
+                    board[j][moves[i]-1] = 0;
+                    break;
+                }
+                if(doll!=0 && doll != basket.peek()){
+                    basket.push(doll);
+                    board[j][moves[i]-1] = 0;
+                    break;
                 }
             }
         }
-        return basket.capacity();
+        return count;
     }
 }
