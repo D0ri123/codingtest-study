@@ -20,13 +20,13 @@ public class Problem12 {
 
         for(int i=0; i<land[0].length; i++){
             sum += land[0][i];
-            BFS(0, i);
+            DFS(0, i);
         }
         answer = max;
         return answer;
     }
 
-    void BFS(int L, int idx){
+    void DFS(int L, int idx){
         if(L==land.length){
             max = Math.max(max, sum);
             sum = 0;
@@ -36,7 +36,7 @@ public class Problem12 {
                 if(check[L][i] == 0){
                     check[L][i] = 1;
                     sum += land[L][i];
-                    BFS(L+1, i);
+                    DFS(L+1, i);
                     check[L][i] = 0;
                 }
             }
