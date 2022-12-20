@@ -11,7 +11,7 @@ public class Problem4 {
         System.out.println(Arrays.toString(pro4.solution(10,2)));
     }
 
-    public int[] solution(int brown, int yellow){ //brown = 24, yellow = 24
+    public int[] solution(int brown, int yellow){
         int totalArea =  brown + yellow;
         int init = 2;
         int width = totalArea, height = totalArea;
