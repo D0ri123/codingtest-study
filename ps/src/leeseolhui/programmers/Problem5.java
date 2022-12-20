@@ -1,7 +1,5 @@
 package leeseolhui.programmers;
 
-import java.util.Arrays;
-
 //피로도
 //현재 피로도 k, 각 던전 별 피로도 - 최소 필요 피로도, 소모 피로도
 public class Problem5 {
