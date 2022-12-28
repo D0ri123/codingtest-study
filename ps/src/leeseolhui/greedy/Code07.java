@@ -30,7 +30,7 @@ public class Code07 {
         Comparator<Person> comp = new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2){
-                return o1.come - o2.come; 
+                return o1.come - o2.come;
             }
         };
 
@@ -42,9 +42,9 @@ public class Code07 {
         int capacity = Integer.MIN_VALUE;
         int count = 0;
         for(int i=arr[0].come; i<=72; i++){
-            for(int j=0; j<arr.length; j++){
-                if(i==arr[j].come) count++;
-                if(i==arr[j].go) count--;
+            for(Person person : arr){
+                if(i==person.come) count++;
+                if(i==person.go) count--;
             }
             capacity = Math.max(capacity, count);
         }
