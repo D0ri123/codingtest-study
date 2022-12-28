@@ -30,7 +30,7 @@ public class Code07 {
         Comparator<Person> comp = new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2){
-                return o1.come - o2.come; //오는 시간대로 오름차순, 오는 시간이 같으면 가는 시간대로 오름차순
+                return o1.come - o2.come; 
             }
         };
 
