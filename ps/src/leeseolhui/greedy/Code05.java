@@ -4,13 +4,18 @@ package leeseolhui.greedy;
 
 import java.util.*;
 
-class Participant{
+class Participant implements Comparable<Participant>{
     int weight;
     int height;
 
     public Participant(int height, int weight){
         this.height = height;
         this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Participant o){
+        return o.height - this.height;
     }
 }
 
@@ -27,24 +32,18 @@ public class Code05 {
             list.add(new Participant(height, weight));
         }
 
+        Collections.sort(list);
+
         System.out.println(solution());
     }
 
     public static int solution(){
-        boolean flag = false;
+        int max = list.get(0).weight;
         int remove = 0;
-        for(int i=0; i<list.size(); i++){
-            Participant comp = list.get(i);
-            for(int j=0; j<list.size(); j++){
-                if(i==j) continue;
-                if((comp.weight < list.get(j).weight) && (comp.height < list.get(j).height)) flag = true;
-            }
-            if(flag) {
-                remove++;
-                flag = false;
-            }
+        for(int i=1; i<list.size(); i++){
+            if(max > list.get(i).weight) remove++;
+            else max = list.get(i).weight;
         }
-
         return list.size() - remove;
     }
 }
