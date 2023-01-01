@@ -18,13 +18,13 @@ public class Code04 {
                 int num1 = stack.pop();
                 int num2 = stack.pop();
                 if(ch == '+')
-                    result = num1+num2;
+                    result = num1 + num2;
                 else if(ch == '-')
-                    result = num2-num1;
+                    result = num2 - num1;
                 else if(ch== '*')
-                    result = num1*num2;
+                    result = num1 * num2;
                 else
-                    result = num1/num2;
+                    result = num1 / num2;
                 stack.push(result);
             }
         }
