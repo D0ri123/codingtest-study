@@ -9,8 +9,8 @@ public class Code07 {
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
-        String curriculum = sc.nextLine(); //CBA
-        String plan = sc.nextLine(); //CBDAGE
+        String curriculum = sc.nextLine();
+        String plan = sc.nextLine();
 
         System.out.println(solution(curriculum, plan));
     }
@@ -18,10 +18,10 @@ public class Code07 {
     public static String solution(String curriculum, String plan){
         q = new LinkedList<>();
         for(Character ch : curriculum.toCharArray()){
-            q.offer(ch); // A K D E F
+            q.offer(ch);
         }
 
-        for(Character ch : plan.toCharArray()){ // A Y K G D H E J
+        for(Character ch : plan.toCharArray()){
             if(q.contains(ch)){
                 Character character = q.poll();
                 if(ch != character){
