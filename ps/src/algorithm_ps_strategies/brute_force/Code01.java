@@ -1,6 +1,6 @@
 package algorithm_ps_strategies.brute_force;
 
-//0번부터 차례대로 번호 매겨진 n개의 원소 중 네개를 고르는 모든 경우를 출력하라.
+//0번부터 차례대로 번호가 매겨진 n개의 원소 중 네개를 고르는 모든 경우를 출력하라.
 
 import java.util.ArrayList;
 import java.util.Arrays;
