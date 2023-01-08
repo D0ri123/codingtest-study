@@ -2,7 +2,6 @@ package leeseolhui.programmers;
 
 //디스크 컨트롤러
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
