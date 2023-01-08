@@ -26,17 +26,10 @@ public class Problem15 {
             parent[i] = i;
         }
 
-        boolean[][] visited = new boolean[n][n];
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
                 if(i==j) continue;
-                if(computers[i][j] == 1 && computers[j][i] == 1) {
-                    if(!visited[i][j] && !visited[j][i]) {
-                        union(i, j);
-                        visited[i][j] = true;
-                        visited[j][i] = true;
-                    }
-                }
+                if(computers[i][j] == 1 && computers[j][i] == 1) union(i, j);
             }
         }
 
