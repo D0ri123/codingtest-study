@@ -8,7 +8,6 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Problem14 {
-    public static ArrayList<Integer> time = new ArrayList<>();
     public static void main(String[] args) {
         Problem14 s = new Problem14();
         int[][] jobs = new int[][]{{0,3},{1,9},{2,6}};
