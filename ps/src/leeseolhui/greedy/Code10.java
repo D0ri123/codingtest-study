@@ -39,7 +39,7 @@ public class Code10 {
         for(int i=0; i<e; i++){
             int a = sc.nextInt();
             int b = sc.nextInt();
-            int c = sc.nextInt(); 
+            int c = sc.nextInt();
             list.get(a).add(new Info(b, c));
             list.get(b).add(new Info(a, c));
         }
