@@ -7,16 +7,20 @@ import java.util.Comparator;
 
 public class Problem19 {
     public static int[] parent;
-
     public static void main(String[] args){
         Problem19 pro = new Problem19();
         int n = 5;
         int[][] costs = new int[][] {{0, 1, 5}, {1, 2, 3}, {2, 3, 3}, {3, 1, 2}, {3, 0, 4}, {2, 4, 6}, {4, 0, 7}};
+
+        pro.initSetting(n);
+        System.out.println(pro.solution(n, costs));
+    }
+
+    public void initSetting(int n){
         parent = new int[n];
         for(int i=0; i<n; i++){
             parent[i] = i;
         }
-        System.out.println(pro.solution(n, costs));
     }
 
     public int solution(int n, int[][] costs){ //한 행에 [섬의 번호, 섬의 번호, 연결 비용]
